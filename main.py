@@ -1,25 +1,15 @@
 import json
 import pandas as pd
-from tqdm import tqdm
-
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 import datetime
 import os.path
 from os import path
 import csv
 
-from pygments import highlight
-from pygments.lexers import JsonLexer
-from pygments.formatters import TerminalFormatter
-
 from google_play_scraper import Sort, reviews, app, reviews_all
 
 # %matplotlib inline
 # %config InlineBackend.figure_format='retina'
-
-sns.set(style='whitegrid', palette='muted', font_scale=1.2)
 
 
 def main():
@@ -37,6 +27,7 @@ def main():
             lang='en', # defaults to 'en'
             country='us', # defaults to 'us'
             sort=Sort.MOST_RELEVANT, # defaults to Sort.MOST_RELEVANT
+            # Comment next line out to get all reviews of all scores 
             filter_score_with=1 # defaults to None(means all score)
         )
 

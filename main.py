@@ -51,7 +51,7 @@ def main():
         data = json.load(json_file)
 
     # now we will open a file for writing 
-    csv_file = open('data.csv', 'w') 
+    csv_file = open('data.csv', 'w', encoding='utf-8') 
     
     # create the csv writer object 
     csv_writer = csv.writer(csv_file) 
@@ -75,6 +75,7 @@ def main():
 
 def myconverter(o):
     if isinstance(o, datetime.datetime):
+        o = o.strftime('%d')
         return o.__str__()
 
 
